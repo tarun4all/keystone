@@ -38,7 +38,7 @@ function select(list, path, options) {
 	this.emptyOption = !!options.emptyOption;
 	// cached maps for options, labels and values
 	this.map = utils.optionsMap(this.ops);
-	this.ignoreSelectValidation = this.map.indexOf('dynamic_fn') > -1;
+	this.ignoreSelectValidation = !!(this.map['dynamic_fn']);
 	console.log('[DEBUG]', this.map, this.ignoreSelectValidation);
 	this.labels = utils.optionsMap(this.ops, 'label');
 	this.values = _.map(this.ops, 'value');
