@@ -42,7 +42,7 @@ module.exports = Field.create({
 		let options;
 
 		if (ops && ops.length >= 2 && ops[0].value === 'dynamic_fn') {
-			options = eval("(" + ops[1].value + ")").call(this, this.props.values);
+			options = eval("(" + ops[1].value + ")").call(this, this.props.values, this.props, window.CurrentFormPropsCache);
 		} else {
 			// TODO: This should be natively handled by the Select component
 			options = (numeric)

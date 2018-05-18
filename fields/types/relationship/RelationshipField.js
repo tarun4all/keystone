@@ -160,10 +160,8 @@ module.exports = Field.create({
 			value: value,
 		});
 		if (fullObj) {
-			this.props.onChange({
-				path: this.props.path + 'FullObj',
-				value: fullObj,
-			});
+			window.CurrentFormPropsCache = window.CurrentFormPropsCache || {};
+			window.CurrentFormPropsCache[this.props.path + 'FullObj'] = fullObj;
 		}
 	},
 
