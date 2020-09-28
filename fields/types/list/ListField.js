@@ -105,7 +105,7 @@ module.exports = Field.create({
 					const onRemove = e => this.removeItem(index);
 
 					return (
-						<ItemDom key={id} {...{ id, name, onRemove }}>
+						<ItemDom key={id ? id : index} {...{ id, name, onRemove }}>
 							{this.renderFieldsForItem(index, value)}
 						</ItemDom>
 					);
